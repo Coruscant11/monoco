@@ -1,0 +1,15 @@
+[workspace]
+resolver = "3"
+members = [ "agent", "operator","server"]
+
+[workspace.dependencies]
+anyhow = "1.0.98"
+axum = { version = "0.8.4", features = ["ws"] }
+axum-extra = { version = "0.10.1", features = ["typed-header"] }
+futures-util = { version = "0.3", default-features = false, features = ["sink", "std"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = { version = "1.0.141" }
+tokio = { version = "1.46.1", features = ["macros", "rt-multi-thread"] }
+tower-http = { version = "0.6.6", features = ["fs", "trace"] }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
